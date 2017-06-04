@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
-<title>首页</title>
+<title>学生管理</title>
 
 <link media="screen" rel="stylesheet" href="./css/demo.css"/><link rel="stylesheet" href="css/style_index.css">
 	<link href="css/popup-box.css" rel="stylesheet" type="text/css" media="all" />

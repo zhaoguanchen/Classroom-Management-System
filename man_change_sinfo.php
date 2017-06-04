@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/modernizr.custom.53451.js"></script> 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>学生登录</title>
+<title>学生信息更改</title>
 </head>
 
 <body>
@@ -38,19 +38,13 @@ if($passed != "1")
           $number = $sql_arr['number'];
            $class = $sql_arr['class'];
             $tel = $sql_arr['tel'];
-		$relname = $sql_arr['relname'];
- echo $id ;
-  echo $tel; 
-   
+		$relname = $sql_arr['relname'];   
    
      ?>
    <div align="center">
     <form action="man_change_sinfo_2.php" method="post" id="submit">  
-  
-               
                     <label for="nickname">  用户名:</label>  
                     <input type="text" name="name"  style="width:200px; height=100px ;" value="<?php echo $id ?>" />  
-             
                  <div class="group">  
                     <label for="nickname">    学号:</label>  
                     <input type="text" name="number"style="width:200px; height=100px ;"value="<?php echo $number ?>" />  
@@ -70,14 +64,8 @@ if($passed != "1")
                 <div class="login">  
                     <button type="submit" style="width:200px; height=100px ;"  name="submit">确认修改</button>  
                 </div>  
-         
-               
             </form>  
            </div>  
-   
-   
-   
-
 </body>
 </html>
  
