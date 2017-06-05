@@ -50,6 +50,16 @@
                         {  
                             echo "<script>alert('添加成功！'); history.go(-1);</script>";  
 							$flag=1;
+							
+									 							    //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+ $log->addlog ( "./logs/log_man_s_inc", "a", "管理员 $name    日期 $date  时间$time   增加学生信息$id 密码 $password  $number   $relname $class  $tel" ); //一次插入并换行    
+  $log->addlog ( "./logs/log_man_s_inc", "a", "\n" ); //一次插入并换行            
+ 
+							
                         }  
                         else  
                         {  

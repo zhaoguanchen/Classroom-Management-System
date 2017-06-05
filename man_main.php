@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -187,17 +187,35 @@ if($passed != "1")
 	//header(  "Refresh:5;location:index.html");
 }
 ?>
+
 						<h1>
                         <font color="#000066" size="22" face="Georgia, Times New Roman, Times, serif">
                        欢迎登录 教室预约管理系统管理员端<br>
                        <?php 
 					   echo "欢迎您" ;
 					   echo $name;
+					//  include "log.php"; 
 					   ?>  
                        </font>
                      
+                     
+                     
+ <?php //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+// $log->addlog ( "./log", "a", " 内容1:$content1  内容2: $content2  内容3: $content3 " ); //传多个内容  
+ $log->addlog ( "./logs/log_man_login", "a", "管理员$name    日期 $date  时间$time" ); //一次插入并换行  
+  $log->addlog ( "./logs/log_man_login", "a", "\n" ); //一次插入并换行         
+?>
+                     
+                     
+                     
+                     
 						</h1>
                         </div>
+                        
 </body>
 
 <footer>

@@ -29,7 +29,20 @@ else
 			     $num1 = mysql_num_rows($result_12); //统计执行结果影响的行数  
          if($result_12)  {  
             echo "<script> alert('修改成功！');location.href='main.php'</script>";  
-              }
+           
+		   
+		       //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+// $log->addlog ( "./log", "a", " 内容1:$content1  内容2: $content2  内容3: $content3 " ); //传多个内容  
+ $log->addlog ( "./logs/log_stu_changepasswd", "a", "学生$name  修改密码  日期 $date  时间$time" ); //一次插入并换行        
+$log->addlog ( "./logs/log_stu_changepasswd", "a", "\n" ); //一次插入并换行        
+
+      
+			 
+			  }
 		         else
 		       {  
              echo "<script> alert('修改失败！');window.history.go(-1);</script>";  

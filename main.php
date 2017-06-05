@@ -225,6 +225,15 @@ if($passed != "1")
 					   echo "欢迎您" ;
 					   echo $name;
 					   ?>  
+                        <?php //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+ $log->addlog ( "./logs/log_stu_login", "a", "学生 $name    日期 $date  时间$time" ); //一次插入并换行    
+  $log->addlog ( "./logs/log_stu_login", "a", "\n" ); //一次插入并换行            
+?>
+      
                        </font>
                      
 						</h1>

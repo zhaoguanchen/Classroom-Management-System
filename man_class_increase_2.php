@@ -46,6 +46,15 @@
                         if($res_insert)  
                         {  
                             echo "<script>alert('添加成功！'); location.href='man_main.php';</script>";  
+    //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+ $log->addlog ( "./logs/log_man_c_inc", "a", "管理员 $name    日期 $date  时间$time   添加教室$id $name   $location  $max" ); //一次插入并换行    
+  $log->addlog ( "./logs/log_man_c_inc", "a", "\n" ); //一次插入并换行            
+
+    
 							$flag=1;
                         }  
                         else  
