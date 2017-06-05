@@ -384,7 +384,7 @@ if($time==5){echo "第五节16:00-18:00";}
     <?php
       $flag;
          include "./includes/mysql_connect.php";  
-     	 $sql = "  SELECT * FROM `meetting`  WHERE ID not in ( SELECT cid FROM `meetborrow`  WHERE `date` = '$date' and `time` = '$time')"; 
+     	 $sql = "  SELECT * FROM `meeting`  WHERE ID not in ( SELECT cid FROM `meetborrow`  WHERE `date` = '$date' and `time` = '$time')"; 
 		 $result=mysql_query($sql);  
 		 $num = mysql_num_rows($result); //统计执行结果影响的行数  
 	 

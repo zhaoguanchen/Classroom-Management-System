@@ -35,7 +35,19 @@ echo	$date;
 				     
 		  		   $result_1=mysql_query($sql_1);  
 			       $num1 = mysql_num_rows($result_1); //统计执行结果影响的行数  
-               if($result_1)  {  echo "<script> alert('借用成功！');location.href='main.php'</script>";    }
+               if($result_1)  {  echo "<script> alert('借用成功！');location.href='main.php'</script>";  
+			                           //log 
+include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+ $log->addlog ( "./logs/log_stu_bro_c", "a", "学生 $name    日期 $date  时间$time   教室$cid 借用日期时间$date $time  事由$reason" ); //一次插入并换行    
+  $log->addlog ( "./logs/log_stu_bro_c", "a", "\n" ); //一次插入并换行            
+
+      
+			   
+			   
+			     }
 			   else{ echo "<script> alert('借用失败！');window.history.go(-1);</script>";  }  
 			 }
 				

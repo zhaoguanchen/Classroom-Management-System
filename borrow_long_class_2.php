@@ -77,7 +77,14 @@ if($passed != "1")
 				$num1 = mysql_num_rows($result_1);
 				 $num4 = mysql_num_rows($result_4);
                if($result_1 || ($result_1 && $result_4) || ($result_1 && $result_2 && $result_4) || ($result_1 && $result_2&& $result_3 && $result_4)) 
-			    {  echo "<script> alert('借用成功！');location.href='main.php'</script>";    }
+			    {  echo "<script> alert('借用成功！');location.href='main.php'</script>"; 
+							   include "./includes/logadd.php";   
+$log = new log ();   
+$date = date("Y-m-d") ; 
+$time = date("h:i:sa");
+ $log->addlog ( "./logs/log_stu_bro_l", "a", "学生 $name    日期 $date  时间$time   长期教室$cid 借用日期时间$startdate to $endtime  事由$reason" ); //一次插入并换行    
+  $log->addlog ( "./logs/log_stu_bro_l", "a", "\n" ); //一次插入并换行 
+     }
 			   else{ echo "<script> alert('借用失败！');window.history.go(-1);</script>";  }  
 			 }
 				
