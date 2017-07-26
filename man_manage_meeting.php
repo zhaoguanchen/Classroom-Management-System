@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 	</div>
 </div><br>
 <div align="center"><br>
-用户列表：
+教室列表：：
 </div>
 <?php
 echo '<a href="man_meeting_increase.php">点击此处增加教室</a>';	 

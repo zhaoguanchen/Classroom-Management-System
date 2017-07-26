@@ -8,6 +8,7 @@
 	<link href="css/popup-box.css" rel="stylesheet" type="text/css" media="all" />
 <script src="./js/jquery-1.7.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
+
 jQuery(document).ready(function(){
 	var qcloud={};
 	$('[_t_nav]').hover(function(){
@@ -177,7 +178,7 @@ jQuery(document).ready(function(){
 	</div>
 </div><br>
 <div align="center"><br>
-用户列表：
+教室列表：
 </div>
 <?php
 echo '<a href="man_class_increase.php">点击此处增加教室</a>';	 
@@ -204,7 +205,8 @@ if($passed != "1")
       
 <div     align="center" class="container">
 	
-<link rel="stylesheet" type="text/css" href="form.css">
+<!--<link rel="stylesheet" type="text/css" href="form.css">
+-->
 <link rel="stylesheet" type="text/css" href="./form/css/style.css" />
 <link rel="stylesheet" type="text/css" href="./form/css/basictable.css" />
 <br/><br/>
